@@ -1,0 +1,31 @@
+#_ROOT{
+    -fx-background-color: #fffdff;
+}
+
+#login_btn{
+    -fx-background-color: #5fb884;
+    -fx-text-fill: white;
+}
+
+#login_btn:hover{
+    -fx-background-color: #6fcf97;
+}
+
+.field{
+    -fx-text-fill: #545454;
+}
+
+.paned{
+    -fx-background-color: rgb(248,248,248);
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+}
+
+.success{
+    -fx-fill:#359e2d;
+}
+
+.failed{
+    -fx-fill: #ff1856;
+}

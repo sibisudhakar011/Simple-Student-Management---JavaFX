@@ -1,0 +1,106 @@
+.pane:hover{
+    -fx-background-color: gray;
+}
+
+.active{
+    -fx-background-color: #f14f6f;
+}
+
+#home_pane{
+    -fx-background-image: url("../../misc/back/grad-home.png");
+}
+
+#view_records_pane{
+    -fx-background-image: url("../../misc/back/grad-show.png");
+}
+
+#add_student_pane{
+    -fx-background-image: url("../../misc/back/grad-addnew.png");
+}
+
+.nav_btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 6px;
+}
+
+.nav_btn:hover{
+    -fx-background-color: white;
+}
+
+.selected_nav_btn{
+    -fx-background-color:  white;
+}
+
+.button_style_1{
+    -fx-background-color: #F5F5F5;
+    -fx-background-radius: 8px;
+    -fx-border-color: #CFCFCF;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+
+
+
+/*tablesudesu*/
+.table-view .column-header,
+.table-view .column-header-background .filler{
+    -fx-background-color:rgb(252, 252, 252);
+    -fx-text-fill: rgb(93, 91, 91);
+    -fx-font-family:'Montserrat';
+    -fx-font-weight: 100;
+    -fx-padding:15 -1 15 15;
+}
+
+.table-view .column-header{
+    -fx-border-width:0px 1px 0px 1px;
+    -fx-border-color:rgb(245,245,245);
+}
+
+.table-view{
+    -fx-border-color: #686868;
+}
+
+.table-view .column-header .label{
+    -fx-text-fill: rgb(70, 70, 70);
+    -fx-font-family:'Montserrat';
+    -fx-font-weight: 100;
+    -fx-font-size:13px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view{
+    -fx-border-size:20px;
+    -fx-background-color:F9F9F9;
+    -fx-text-fill: rgb(93, 93, 93);
+    -fx-cell-size:40px;
+
+    -fx-border-style: solid;
+    -fx-border-color: white;
+}
+
+.table-row-cell {
+    -fx-background-color:F9F9F9;
+    -fx-text-fill: rgb(79, 79, 79);
+}
+
+.table-view .cell{
+    -fx-alignment: CENTER_LEFT;
+    -fx-text-fill: rgb(93, 92, 92);
+    -fx-background-radius:9px;
+    -fx-font-family:'Montserrat';
+    -fx-font-size: 11px;
+    -fx-font-weight: 100;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: ECECEC;
+}
+
+
+/*container panes*/
+.container_pane{
+    -fx-background-color: white;
+    -fx-border-radius: 17px;
+    -fx-background-radius: 17px;
+}

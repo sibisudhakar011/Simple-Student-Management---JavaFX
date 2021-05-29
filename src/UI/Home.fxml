@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="730.0" prefHeight="730.0" prefWidth="1327.0" style="-fx-background-color: black;" stylesheets="@Theme/home.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Home">
+   <children>
+      <Pane maxWidth="286.0" prefHeight="750.0" prefWidth="267.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="750.0" fitWidth="267.0" layoutX="2.0" layoutY="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../misc/back/grad-side.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="Greet" fill="#363636" layoutX="29.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Admin!">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="time_display" fill="#363636" layoutX="28.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="It's 5:20 PM">
+               <font>
+                  <Font name="Montserrat Light" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#363636" layoutX="29.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday May 24, 2021">
+               <font>
+                  <Font name="Montserrat Regular" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#363636" layoutX="28.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Navigation">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <Pane fx:id="home_btn" layoutX="27.0" layoutY="229.0" onMouseClicked="#PANE_BTN" prefHeight="48.0" prefWidth="212.0">
+               <children>
+                  <Text fill="#2e3a59" layoutX="54.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="11.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/home.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <styleClass>
+                  <String fx:value="nav_btn" />
+                  <String fx:value="selected_nav_btn" />
+               </styleClass>
+            </Pane>
+            <Pane fx:id="view_record_btn" layoutX="27.0" layoutY="277.0" onMouseClicked="#PANE_BTN" prefHeight="48.0" prefWidth="212.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="54.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Record">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/view_records.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="add_new_student_btn" layoutX="27.0" layoutY="325.0" onMouseClicked="#PANE_BTN" prefHeight="48.0" prefWidth="212.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="55.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="12.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/add_new.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="update_student_btn" layoutX="27.0" layoutY="373.0" onMouseClicked="#PANE_BTN" prefHeight="48.0" prefWidth="212.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="54.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="12.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/update_student.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="remove_student_btn" layoutX="27.0" layoutY="421.0" onMouseClicked="#PANE_BTN" prefHeight="48.0" prefWidth="212.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="56.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="13.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/remove_student.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fill="#363636" layoutX="28.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Other Actions">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <Pane fx:id="logout_btn" layoutX="44.0" layoutY="570.0" onMouseClicked="#LOGOUT" prefHeight="37.0" prefWidth="116.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="53.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout">
+                     <font>
+                        <Font name="Poppins Medium" size="11.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="18.0" fitWidth="16.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/basic-log_out.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="exit_app_btn" layoutX="44.0" layoutY="618.0" prefHeight="37.0" prefWidth="116.0" styleClass="nav_btn">
+               <children>
+                  <Text fill="#2e3a59" layoutX="53.0" layoutY="24.0" onMouseClicked="#EXIT_APP" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit App">
+                     <font>
+                        <Font name="Poppins Medium" size="11.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/log-off.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="about_btn" layoutX="44.0" layoutY="669.0" onMouseClicked="#ABOUT" prefHeight="37.0" prefWidth="116.0">
+               <children>
+                  <Text fill="#2e3a59" layoutX="53.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About">
+                     <font>
+                        <Font name="Poppins Medium" size="11.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="26.0" fitWidth="24.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/attention-info_circle.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children></Pane>
+      <AnchorPane id="view_records_pane" fx:id="view_record" layoutX="267.0" prefHeight="730.0" prefWidth="1066.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="table_view" layoutX="10.0" layoutY="62.0" prefHeight="654.0" prefWidth="1045.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="62.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="55.0" text="ID" />
+                <TableColumn fx:id="col_fullname" prefWidth="194.0" text="Full Name" />
+                  <TableColumn fx:id="col_email" minWidth="7.0" prefWidth="217.0" text="Email" />
+                  <TableColumn fx:id="col_gender" minWidth="7.0" prefWidth="73.0" text="Gender" />
+                  <TableColumn fx:id="col_yearlevel" minWidth="7.0" prefWidth="60.0" text="Year" />
+                  <TableColumn fx:id="col_department" minWidth="7.0" prefWidth="122.0" text="Department" />
+                  <TableColumn fx:id="col_program" minWidth="7.0" prefWidth="321.0" text="Program" />
+              </columns>
+            </TableView>
+            <Text fill="#464646" layoutX="45.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search By">
+               <font>
+                  <Font name="Montserrat Regular" size="13.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="filter" layoutX="121.0" layoutY="14.0" prefHeight="37.0" prefWidth="127.0" styleClass="button_style_1" />
+            <TextField fx:id="view_searchfield" layoutX="259.0" layoutY="15.0" prefHeight="37.0" prefWidth="212.0" promptText="Search Here" styleClass="button_style_1" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="593.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Button layoutX="481.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchStudent" prefHeight="37.0" prefWidth="53.0" AnchorPane.rightAnchor="530.0" AnchorPane.topAnchor="14.0">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/edit-search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Text fill="#252525" layoutX="627.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Action" AnchorPane.rightAnchor="394.6330032348633" AnchorPane.topAnchor="27.416000366210938">
+               <font>
+                  <Font name="Montserrat Regular" size="13.0" />
+               </font>
+            </Text>
+            <Button layoutX="678.0" layoutY="17.0" mnemonicParsing="false" onAction="#Update_Selected" prefHeight="37.0" prefWidth="166.0" text="  Update Student" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="17.0">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/update_student.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="855.0" layoutY="17.0" mnemonicParsing="false" onAction="#Remove_Selected" prefHeight="37.0" prefWidth="166.0" text="  Remove Student" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="17.0">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/remove_student.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+         </children></AnchorPane>
+      <AnchorPane id="home_pane" fx:id="home_pane" layoutX="267.0" prefHeight="730.0" prefWidth="1066.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="78.0" layoutY="33.0" prefHeight="227.0" prefWidth="908.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="33.0">
+               <children>
+                  <ImageView fitHeight="289.0" fitWidth="908.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-4.0">
+                     <image>
+                        <Image url="@../misc/back/work_cover.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text fill="#363636" layoutX="78.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick Stat">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <Pane layoutX="78.0" layoutY="334.0" prefHeight="126.0" prefWidth="239.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 15px;">
+               <children>
+                  <Text fill="#2e3a59" layoutX="69.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Students">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_total_students" fill="#2e3a59" layoutX="69.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Montserrat Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/total_students_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="30.11" offsetX="5.0" offsetY="5.0" radius="16.8925" width="39.46">
+                     <color>
+                        <Color red="0.9210526347160339" green="0.9039961099624634" blue="0.9039961099624634" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+            <Pane layoutX="78.0" layoutY="504.0" prefHeight="126.0" prefWidth="239.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 15px;">
+               <children>
+                  <Text fill="#2e3a59" layoutX="69.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Students Today">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_new_students" fill="#2e3a59" layoutX="69.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Montserrat Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/new_students_today_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="30.11" offsetX="5.0" offsetY="5.0" radius="16.8925" width="39.46">
+                     <color>
+                        <Color red="0.9210526347160339" green="0.9039961099624634" blue="0.9039961099624634" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+            <Pane layoutX="361.0" layoutY="334.0" prefHeight="126.0" prefWidth="239.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 15px;">
+               <children>
+                  <Text fill="#2e3a59" layoutX="69.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Removed Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_removed_student" fill="#2e3a59" layoutX="69.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Montserrat Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/removed_student_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="30.11" offsetX="5.0" offsetY="5.0" radius="16.8925" width="39.46">
+                     <color>
+                        <Color red="0.9210526347160339" green="0.9039961099624634" blue="0.9039961099624634" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+            <Pane layoutX="361.0" layoutY="504.0" prefHeight="126.0" prefWidth="239.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 15px;">
+               <children>
+                  <Text fill="#2e3a59" layoutX="69.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regular Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_regular_student" fill="#2e3a59" layoutX="69.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Montserrat Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/irregular_students_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="30.11" offsetX="5.0" offsetY="5.0" radius="16.8925" width="39.46">
+                     <color>
+                        <Color red="0.9210526347160339" green="0.9039961099624634" blue="0.9039961099624634" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+            <Pane layoutX="643.0" layoutY="334.0" prefHeight="126.0" prefWidth="260.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 15px;">
+               <children>
+                  <Text fill="#2e3a59" layoutX="69.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Irregular Student">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_irregular_student" fill="#2e3a59" layoutX="69.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                     <font>
+                        <Font name="Montserrat Medium" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/irregular_students_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow height="30.11" offsetX="5.0" offsetY="5.0" radius="16.8925" width="39.46">
+                     <color>
+                        <Color red="0.9210526347160339" green="0.9039961099624634" blue="0.9039961099624634" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="add_student_pane" fx:id="add_student" layoutX="267.0" prefHeight="730.0" prefWidth="1066.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="#363636" layoutX="161.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Student">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="57.0" fitWidth="75.0" layoutX="66.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../misc/icons/add_student_icon.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="cont_pane1" layoutX="73.0" layoutY="78.0" prefHeight="302.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="78.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Personal Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="28.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="first_name_add" layoutX="26.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="30.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="181.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="middle_name_add" layoutX="330.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="last_name_add" layoutX="622.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <TextField fx:id="mobile_number_add" layoutX="26.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="email_address_add" layoutX="330.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <DatePicker fx:id="date_of_birth_add" layoutX="621.0" layoutY="149.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="gender_add" layoutX="26.0" layoutY="245.0" prefHeight="37.0" prefWidth="126.0" styleClass="button_style_1" />
+                  <TextField fx:id="current_address_add" layoutX="181.0" layoutY="245.0" prefHeight="37.0" prefWidth="700.0" styleClass="button_style_1" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="cont_pane2" layoutX="73.0" layoutY="410.0" prefHeight="230.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="410.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Program Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="department_add" layoutX="26.0" layoutY="80.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="26.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Program">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="303.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Type">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="stud_type_add" layoutX="302.0" layoutY="80.0" prefHeight="37.0" prefWidth="292.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="609.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="year_add" layoutX="609.0" layoutY="80.0" prefHeight="37.0" prefWidth="75.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="699.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Section">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="section_add" layoutX="699.0" layoutY="80.0" prefHeight="37.0" prefWidth="184.0" styleClass="button_style_1" AnchorPane.leftAnchor="698.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="program_add" layoutX="27.0" layoutY="171.0" prefHeight="37.0" prefWidth="855.0" styleClass="button_style_1" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <Button layoutX="73.0" layoutY="666.0" mnemonicParsing="false" onAction="#Add_Student" prefHeight="37.0" prefWidth="166.0" text="Save">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/save_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="250.0" layoutY="666.0" mnemonicParsing="false" onAction="#Clear_Add_New_Form" prefHeight="37.0" prefWidth="166.0" text="Clear">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/clear_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="add_student_pane" fx:id="update_student" layoutX="267.0" prefHeight="730.0" prefWidth="1066.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="student_id_search_update" layoutX="690.0" layoutY="27.0" prefHeight="37.0" prefWidth="227.0" promptText="Enter Student ID" styleClass="button_style_1" AnchorPane.leftAnchor="690.0" AnchorPane.rightAnchor="149.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+            </TextField>
+            <Text fill="#363636" layoutX="161.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Student">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="91.0" fitWidth="113.0" layoutX="71.0" pickOnBounds="true" preserveRatio="true" rotate="16.7">
+               <image>
+                  <Image url="@../misc/icons/update.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="cont_pane11" layoutX="73.0" layoutY="78.0" prefHeight="302.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="78.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Personal Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="28.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="first_name_add1" layoutX="26.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="30.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="181.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="middle_name_add1" layoutX="330.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="last_name_add1" layoutX="622.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <TextField fx:id="mobile_number_add1" layoutX="26.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="email_address_add1" layoutX="330.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <DatePicker fx:id="date_of_birth_add1" layoutX="621.0" layoutY="149.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="gender_add1" layoutX="26.0" layoutY="245.0" prefHeight="37.0" prefWidth="126.0" styleClass="button_style_1" />
+                  <TextField fx:id="current_address_add1" layoutX="181.0" layoutY="245.0" prefHeight="37.0" prefWidth="700.0" styleClass="button_style_1" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="cont_pane21" layoutX="73.0" layoutY="410.0" prefHeight="230.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="410.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Program Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="department_add1" layoutX="26.0" layoutY="80.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="26.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Program">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="303.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Type">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="stud_type_add1" layoutX="302.0" layoutY="80.0" prefHeight="37.0" prefWidth="292.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="609.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="year_add1" layoutX="609.0" layoutY="80.0" prefHeight="37.0" prefWidth="75.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="699.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Section">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="section_add1" layoutX="699.0" layoutY="80.0" prefHeight="37.0" prefWidth="184.0" styleClass="button_style_1" AnchorPane.leftAnchor="698.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="program_add1" layoutX="27.0" layoutY="171.0" prefHeight="37.0" prefWidth="855.0" styleClass="button_style_1" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <Button layoutX="73.0" layoutY="666.0" mnemonicParsing="false" onAction="#Update_Student" prefHeight="37.0" prefWidth="166.0" text="Save">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/save_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="927.0" layoutY="26.0" mnemonicParsing="false" onAction="#Search_Update_Student" prefHeight="37.0" prefWidth="53.0" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="26.0">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/edit-search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="250.0" layoutY="666.0" mnemonicParsing="false" onAction="#Clear_Update_Form" prefHeight="37.0" prefWidth="166.0" text="Cancel">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/clear_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="add_student_pane" fx:id="remove_student" layoutX="267.0" prefHeight="730.0" prefWidth="1066.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <TextField fx:id="student_id_search_remove" layoutX="690.0" layoutY="27.0" prefHeight="37.0" prefWidth="227.0" promptText="Enter Student ID" styleClass="button_style_1">
+               <font>
+                  <Font name="Poppins Regular" size="13.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="115.0" fitWidth="121.0" layoutX="54.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../misc/icons/Remove_Q.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="cont_pane111" layoutX="73.0" layoutY="78.0" prefHeight="302.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="78.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Personal Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="28.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="first_name_add11" layoutX="26.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="30.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile Number">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="330.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="622.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Of Birth">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="181.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Address">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="middle_name_add11" layoutX="330.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="last_name_add11" layoutX="622.0" layoutY="74.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <TextField fx:id="mobile_number_add11" layoutX="26.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <TextField fx:id="email_address_add11" layoutX="330.0" layoutY="153.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <DatePicker fx:id="date_of_birth_add11" layoutX="621.0" layoutY="149.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" AnchorPane.leftAnchor="622.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="gender_add11" layoutX="26.0" layoutY="245.0" prefHeight="37.0" prefWidth="126.0" styleClass="button_style_1" />
+                  <TextField fx:id="current_address_add11" layoutX="181.0" layoutY="245.0" prefHeight="37.0" prefWidth="700.0" styleClass="button_style_1" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="cont_pane211" layoutX="73.0" layoutY="410.0" prefHeight="230.0" prefWidth="919.0" styleClass="container_pane" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="410.0">
+               <children>
+                  <Text fill="#363636" layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Program Information">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="27.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="department_add11" layoutX="26.0" layoutY="80.0" prefHeight="37.0" prefWidth="260.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="26.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Program">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2e3a59" layoutX="303.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Type">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="stud_type_add11" layoutX="302.0" layoutY="80.0" prefHeight="37.0" prefWidth="292.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="609.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="year_add11" layoutX="609.0" layoutY="80.0" prefHeight="37.0" prefWidth="75.0" styleClass="button_style_1" />
+                  <Text fill="#2e3a59" layoutX="699.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Section">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="section_add11" layoutX="699.0" layoutY="80.0" prefHeight="37.0" prefWidth="184.0" styleClass="button_style_1" AnchorPane.leftAnchor="698.0" AnchorPane.rightAnchor="37.0" />
+                  <ComboBox fx:id="program_add11" layoutX="27.0" layoutY="171.0" prefHeight="37.0" prefWidth="855.0" styleClass="button_style_1" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="37.0" />
+               </children>
+               <effect>
+                  <DropShadow height="58.95" offsetX="6.0" offsetY="6.0" radius="27.835" spread="0.3" width="54.39">
+                     <color>
+                        <Color red="0.9342105388641357" green="0.9342105388641357" blue="0.9342105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <Button layoutX="73.0" layoutY="666.0" mnemonicParsing="false" onAction="#Remove_Student" prefHeight="37.0" prefWidth="166.0" text="Remove">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/remove_student.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="927.0" layoutY="26.0" mnemonicParsing="false" onAction="#Search_Remove_Student" prefHeight="37.0" prefWidth="53.0">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/edit-search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="250.0" layoutY="666.0" mnemonicParsing="false" onAction="#Clear_Remove_Form" prefHeight="37.0" prefWidth="166.0" text="Cancel">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../misc/icons/clear_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="button_style_1" />
+                  <String fx:value="nav_btn" />
+               </styleClass>
+            </Button>
+            <Text fill="#363636" layoutX="161.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Student">
+               <font>
+                  <Font name="Montserrat SemiBold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ImageView disable="true" fitHeight="730.0" fitWidth="1333.0" opacity="0.08" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../misc/back/filter_noise.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
